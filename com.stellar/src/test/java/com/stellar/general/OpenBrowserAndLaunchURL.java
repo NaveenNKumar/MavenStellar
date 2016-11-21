@@ -8,7 +8,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class OpenBrowserAndLaunchURL {
 	WebDriver driver;
-	String browser = "firefox";
+	String browser = "chrome";
 	
 	public void openBrowser(){
 	if(browser.equals("firefox")){
@@ -21,6 +21,7 @@ public class OpenBrowserAndLaunchURL {
 	else 
 	{
 		if (browser.equals("chrome")){
+			System.setProperty("webdriver.chrome.driver", "./src/test/java/TestRequirements/chromedriver.exe");
 			driver = new ChromeDriver();
 			driver.manage().window().maximize();
 			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
