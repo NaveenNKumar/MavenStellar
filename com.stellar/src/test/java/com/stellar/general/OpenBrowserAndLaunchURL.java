@@ -7,7 +7,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class OpenBrowserAndLaunchURL {
-	WebDriver driver;
+	public static WebDriver driver;
 	String browser = "chrome";
 	
 	public void openBrowser(){
