@@ -12,3 +12,9 @@ Scenario: As a user i should be able to see sign in page
 
 	When I click on sign in link 
 	Then I should be in sign in page 
+	
+	
+Scenario: As a user, I should be able to view Customer service page 
+
+	When I click on Contact Us link 
+	Then I should be in Customer Service contact page

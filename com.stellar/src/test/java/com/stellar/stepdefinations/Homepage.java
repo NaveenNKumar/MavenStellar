@@ -6,6 +6,7 @@ import cucumber.api.PendingException;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import pageObjects.CustomerService;
 import pageObjects.Home;
 import pageObjects.Signin;
 import seleniumFunctions.GetText;
@@ -18,6 +19,7 @@ public class Homepage extends OpenBrowserAndLaunchURL {
 	Home hp = new Home();
 	Link ln = new Link();
 	Signin sn = new Signin();
+	CustomerService cst = new CustomerService();
 
 	@Given("^I should have valid URL$")
 	public void i_should_have_valid_URL() throws Throwable {
@@ -35,16 +37,16 @@ public class Homepage extends OpenBrowserAndLaunchURL {
 	}
 
 	@When("^I click on Enter key from keyboard$")
-	public void i_click_on_Enter_key_from_keyboard() throws Throwable {
+	public void launchApplication() throws Throwable {
 
 		op1.openBrowser();
 
 	}
 
 	@Then("^I should be in Automation Practice application$")
-	public void i_should_be_in_Automation_Practice_application() throws Throwable {
+	public void checkApplication() throws Throwable {
 		System.out.println("Application title : " + driver.getTitle());
-		// System.out.println(gt.getText(hp.txt_logo()));
+		gt.getText(hp.txt_phnnumber(driver));
 
 	}
 
@@ -62,6 +64,18 @@ public class Homepage extends OpenBrowserAndLaunchURL {
 		Thread.sleep(3000);
 		gt.getText(sn.txt_Authentication(driver));
 
+	}
+
+	@When("^I click on Contact Us link$")
+	public void clickContactuslink() throws Throwable {
+		Thread.sleep(10000);
+		ln.linkclick(hp.lik_Contact(driver));
+
+	}
+
+	@Then("^I should be in Customer Service contact page$")
+	public void checkCustomerPage() throws Throwable {
+		gt.getText(cst.txt_CustomerService(driver));
 	}
 
 }

@@ -12,13 +12,18 @@ public class Home {
 
 	}
 
-	public WebElement txt_logo(WebDriver driver) {
-		WebElement element = driver.findElement(By.xpath("//a[@title='My Store']"));
+	public WebElement txt_phnnumber(WebDriver driver) {
+		WebElement element = driver.findElement(By.xpath("//span[@class='shop-phone']/strong"));
 		return element;
 	}
 
 	public WebElement lnk_signin(WebDriver driver) {
 		WebElement element = driver.findElement(By.partialLinkText("Sign in"));
+		return element;
+	}
+
+	public WebElement lik_Contact(WebDriver driver) {
+		WebElement element = driver.findElement(By.id("contact-link"));
 		return element;
 	}
 }
