@@ -76,6 +76,7 @@ public class Homepage extends OpenBrowserAndLaunchURL {
 	@Then("^I should be in Customer Service contact page$")
 	public void checkCustomerPage() throws Throwable {
 		gt.getText(cst.txt_CustomerService(driver));
+		System.out.println();
 	}
 
 }
