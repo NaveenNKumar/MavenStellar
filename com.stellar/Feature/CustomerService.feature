@@ -12,4 +12,4 @@ Scenario: Send message to automation practice customer service
 	And I browse and attach file 
 	And I enter message 
 	And I click on Send button 
-	Then I should see successfull message
+	Then I should see successfull message.
